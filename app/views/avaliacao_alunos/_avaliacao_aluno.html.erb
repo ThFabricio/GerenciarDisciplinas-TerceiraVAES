@@ -9,4 +9,34 @@
     <%= avaliacao_aluno.observacoes %>
   </p>
 
+  <p>
+    <strong>Aluno:</strong>
+    <%= avaliacao_aluno.aluno.nome %>
+  </p>
+
+  <p>
+    <strong>Atividade:</strong>
+    <%= avaliacao_aluno.atividade.titulo %>
+  </p>
+
+  <p>
+    <strong>Disciplina:</strong>
+    <%= avaliacao_aluno.atividade.disciplina.nome %>
+  </p>
+
+  <p>
+    <strong>Turma:</strong>
+    <%= avaliacao_aluno.atividade.disciplina.turma.letra_turma %>
+  </p>
+
+  <p>
+    <strong>Ano:</strong>
+    <%= avaliacao_aluno.atividade.disciplina.turma.ano %>
+  </p>
+
+  <p>
+    <strong>Ano Letivo:</strong>
+    <%= avaliacao_aluno.atividade.disciplina.turma.ano_letivo %>
+  </p>
+
 </div>
