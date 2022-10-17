@@ -13,14 +13,17 @@ class AtividadesController < ApplicationController
   # GET /atividades/new
   def new
     @atividade = Atividade.new
+    @disciplinas = Disciplina.all.map { |disciplina| ["#{disciplina.nome} - #{disciplina.turma.letra_turma} - #{disciplina.turma.ano} - #{disciplina.turma.ano_letivo}", disciplina.id] }
   end
 
   # GET /atividades/1/edit
   def edit
+    @disciplinas = Disciplina.all.map { |disciplina| ["#{disciplina.nome} - #{disciplina.turma.letra_turma} - #{disciplina.turma.ano} - #{disciplina.turma.ano_letivo}", disciplina.id] }
   end
 
   # POST /atividades or /atividades.json
   def create
+    @disciplinas = Disciplina.all.map { |disciplina| ["#{disciplina.nome} - #{disciplina.turma.letra_turma} - #{disciplina.turma.ano} - #{disciplina.turma.ano_letivo}", disciplina.id] }
     @atividade = Atividade.new(atividade_params)
 
     respond_to do |format|
@@ -65,6 +68,6 @@ class AtividadesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def atividade_params
-      params.require(:atividade).permit(:titulo, :descricao, :bimestre, :data)
+      params.require(:atividade).permit(:titulo, :descricao, :bimestre, :data, :disciplina_id)
     end
 end
