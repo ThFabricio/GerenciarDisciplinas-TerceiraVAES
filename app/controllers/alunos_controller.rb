@@ -13,14 +13,17 @@ class AlunosController < ApplicationController
   # GET /alunos/new
   def new
     @aluno = Aluno.new
+    @turmas = Turma.all.map { |turma| ["#{turma.letra_turma} - #{turma.ano} - #{turma.ano_letivo}", turma.id] }
   end
 
   # GET /alunos/1/edit
   def edit
+    @turmas = Turma.all.map { |turma| ["#{turma.letra_turma} - #{turma.ano} - #{turma.ano_letivo}", turma.id] }
   end
 
   # POST /alunos or /alunos.json
   def create
+    @turmas = Turma.all.map { |turma| ["#{turma.letra_turma} - #{turma.ano} - #{turma.ano_letivo}", turma.id] }
     @aluno = Aluno.new(aluno_params)
 
     respond_to do |format|
@@ -65,6 +68,6 @@ class AlunosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def aluno_params
-      params.require(:aluno).permit(:nome)
+      params.require(:aluno).permit(:nome, :turma_id)
     end
 end
