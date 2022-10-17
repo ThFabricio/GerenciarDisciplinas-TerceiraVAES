@@ -75,3 +75,5 @@ group :actions do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
 end
+
+gem 'devise'
