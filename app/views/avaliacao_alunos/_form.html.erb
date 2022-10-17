@@ -22,6 +22,16 @@
   </div>
 
   <div>
+    <%= form.label :atividade_id, style: "display: block" %>
+    <%= form.select :atividade_id, @atividades, {}, {class: "form-control"} %>
+  </div>
+
+  <div>
+    <%= form.label :aluno_id, style: "display: block" %>
+    <%= form.select :aluno_id, @alunos, {}, {class: "form-control"} %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
