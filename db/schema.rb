@@ -13,6 +13,7 @@
 ActiveRecord::Schema[7.0].define(version: 2022_10_17_200035) do
   create_table "disciplinas", force: :cascade do |t|
     t.string "nome"
+    t.string "ano_letivo"
     t.integer "user_id", null: false
     t.integer "turma_id", null: false
     t.datetime "created_at", null: false
