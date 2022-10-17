@@ -219,6 +219,19 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rspec (3.11.0)
+      rspec-core (~> 3.11.0)
+      rspec-expectations (~> 3.11.0)
+      rspec-mocks (~> 3.11.0)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-support (3.11.1)
     rubyzip (2.3.2)
     selenium-webdriver (4.5.0)
       childprocess (>= 0.5, < 5.0)
@@ -284,6 +297,11 @@ DEPENDENCIES
   pg
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.2)
+  rspec
+  rspec-core
+  rspec-expectations
+  rspec-mocks
+  rspec-support
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
