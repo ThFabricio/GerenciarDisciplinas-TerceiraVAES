@@ -13,14 +13,21 @@ class AvaliacaoAlunosController < ApplicationController
   # GET /avaliacao_alunos/new
   def new
     @avaliacao_aluno = AvaliacaoAluno.new
+    @atividades = Atividade.all.map {|atividade| ["#{atividade.titulo} - #{atividade.descricao}, #{atividade.disciplina.nome} - #{atividade.disciplina.turma.letra_turma} - #{atividade.disciplina.turma.ano} - #{atividade.disciplina.turma.ano_letivo}", atividade.id]}
+    @alunos = Aluno.all.map {|aluno| ["#{aluno.nome} - #{aluno.turma.letra_turma} - #{aluno.turma.ano} - #{aluno.turma.ano_letivo}", aluno.id]}
   end
 
   # GET /avaliacao_alunos/1/edit
   def edit
+    @atividades = Atividade.all.map {|atividade| ["#{atividade.titulo} - #{atividade.descricao}, #{atividade.disciplina.nome} - #{atividade.disciplina.turma.letra_turma} - #{atividade.disciplina.turma.ano} - #{atividade.disciplina.turma.ano_letivo}", atividade.id]}
+    @alunos = Aluno.all.map {|aluno| ["#{aluno.nome} - #{aluno.turma.letra_turma} - #{aluno.turma.ano} - #{aluno.turma.ano_letivo}", aluno.id]}
   end
 
   # POST /avaliacao_alunos or /avaliacao_alunos.json
   def create
+    @atividades = Atividade.all.map {|atividade| ["#{atividade.titulo} - #{atividade.descricao}, #{atividade.disciplina.nome} - #{atividade.disciplina.turma.letra_turma} - #{atividade.disciplina.turma.ano} - #{atividade.disciplina.turma.ano_letivo}", atividade.id]}
+    @alunos = Aluno.all.map {|aluno| ["#{aluno.nome} - #{aluno.turma.letra_turma} - #{aluno.turma.ano} - #{aluno.turma.ano_letivo}", aluno.id]}
+
     @avaliacao_aluno = AvaliacaoAluno.new(avaliacao_aluno_params)
 
     respond_to do |format|
@@ -65,6 +72,6 @@ class AvaliacaoAlunosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def avaliacao_aluno_params
-      params.require(:avaliacao_aluno).permit(:pontos, :observacoes)
+      params.require(:avaliacao_aluno).permit(:pontos, :observacoes, :aluno_id, :atividade_id)
     end
 end
