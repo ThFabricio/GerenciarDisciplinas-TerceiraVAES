@@ -17,6 +17,11 @@
   </div>
 
   <div>
+    <%= form.label :turma_id, style: "display: block" %>
+    <%= form.select :turma_id, @turmas, {}, {class: "form-control"} %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
