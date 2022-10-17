@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :disciplinas
   resources :turmas
   devise_for :users
   root "home_page#home"
