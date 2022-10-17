@@ -32,6 +32,11 @@
   </div>
 
   <div>
+    <%= form.label :disciplina_id, style: "display: block" %>
+    <%= form.select :disciplina_id, @disciplinas, {}, {class: "form-control"} %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

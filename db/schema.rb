@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_17_204421) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_17_210615) do
   create_table "alunos", force: :cascade do |t|
     t.string "nome"
     t.integer "turma_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["turma_id"], name: "index_alunos_on_turma_id"
+  end
+
+  create_table "atividades", force: :cascade do |t|
+    t.string "titulo"
+    t.string "descricao"
+    t.string "bimestre"
+    t.date "data"
+    t.integer "disciplina_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["disciplina_id"], name: "index_atividades_on_disciplina_id"
   end
 
   create_table "disciplinas", force: :cascade do |t|
@@ -54,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_17_204421) do
   end
 
   add_foreign_key "alunos", "turmas"
+  add_foreign_key "atividades", "disciplinas"
   add_foreign_key "disciplinas", "turmas"
   add_foreign_key "disciplinas", "users"
   add_foreign_key "turmas", "users"
