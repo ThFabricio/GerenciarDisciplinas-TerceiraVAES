@@ -1,0 +1,32 @@
+<%= form_with(model: turma) do |form| %>
+  <% if turma.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(turma.errors.count, "error") %> prohibited this turma from being saved:</h2>
+
+      <ul>
+        <% turma.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :letra_turma, style: "display: block" %>
+    <%= form.text_field :letra_turma %>
+  </div>
+
+  <div>
+    <%= form.label :ano, style: "display: block" %>
+    <%= form.text_field :ano %>
+  </div>
+
+  <div>
+    <%= form.label :ano_letivo, style: "display: block" %>
+    <%= form.text_field :ano_letivo %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

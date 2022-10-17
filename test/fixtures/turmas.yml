@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  letra_turma: MyString
+  ano: MyString
+  ano_letivo: MyString
+
+two:
+  letra_turma: MyString
+  ano: MyString
+  ano_letivo: MyString
