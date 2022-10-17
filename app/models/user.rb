@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   has_many :turmas
+  has_many :disciplinas
 end
