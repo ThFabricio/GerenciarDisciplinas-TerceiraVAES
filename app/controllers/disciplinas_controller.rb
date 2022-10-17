@@ -13,6 +13,7 @@ class DisciplinasController < ApplicationController
   # GET /disciplinas/new
   def new
     @disciplina = Disciplina.new
+    @turmas = Turma.all.map { |turma| ["#{turma.letra_turma} - #{turma.ano} - #{turma.ano_letivo}", turma.id] }
   end
 
   # GET /disciplinas/1/edit
@@ -21,7 +22,10 @@ class DisciplinasController < ApplicationController
 
   # POST /disciplinas or /disciplinas.json
   def create
+    @turmas = Turma.all.map { |turma| ["#{turma.letra_turma} - #{turma.ano} - #{turma.ano_letivo}", turma.id] }
     @disciplina = Disciplina.new(disciplina_params)
+    @disciplina.user_id = current_user.id
+
 
     respond_to do |format|
       if @disciplina.save
@@ -65,6 +69,6 @@ class DisciplinasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def disciplina_params
-      params.require(:disciplina).permit(:nome)
+      params.require(:disciplina).permit(:nome, :turma_id)
     end
 end

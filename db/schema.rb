@@ -13,8 +13,12 @@
 ActiveRecord::Schema[7.0].define(version: 2022_10_17_200035) do
   create_table "disciplinas", force: :cascade do |t|
     t.string "nome"
+    t.integer "user_id", null: false
+    t.integer "turma_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["turma_id"], name: "index_disciplinas_on_turma_id"
+    t.index ["user_id"], name: "index_disciplinas_on_user_id"
   end
 
   create_table "turmas", force: :cascade do |t|
@@ -40,5 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_17_200035) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "disciplinas", "turmas"
+  add_foreign_key "disciplinas", "users"
   add_foreign_key "turmas", "users"
 end
