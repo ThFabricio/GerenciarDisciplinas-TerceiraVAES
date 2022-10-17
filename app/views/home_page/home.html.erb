@@ -1,0 +1,10 @@
+<h1>Bem vindo ao Gerenciamento de Atividade</h1>
+
+<% if current_user %>
+  <p>Ola <%= current_user.nome %>!</p>
+  <p> <%= link_to "Logout", destroy_user_session_path, 'data-turbo-method': :delete %> </p>
+
+<% else %>
+  <p> <%= link_to "Login", new_user_session_path %> </p>
+  <p> <%= link_to "Sign up", new_user_registration_path %> </p>
+<% end %>
