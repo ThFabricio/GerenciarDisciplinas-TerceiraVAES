@@ -22,6 +22,7 @@ class TurmasController < ApplicationController
   # POST /turmas or /turmas.json
   def create
     @turma = Turma.new(turma_params)
+    @turma.user = current_user
 
     respond_to do |format|
       if @turma.save
