@@ -1,0 +1,2 @@
+class AvaliacaoAluno < ApplicationRecord
+end
