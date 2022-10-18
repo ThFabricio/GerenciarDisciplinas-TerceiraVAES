@@ -1,24 +1,8 @@
-# README
+# Gerenciar Disciplina - Terceira VA - ES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c239987f678d42139613bd0e8b334bed)](https://www.codacy.com/gh/ThFabricio/GerenciarDisciplinas-TerceiraVAES/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ThFabricio/GerenciarDisciplinas-TerceiraVAES&amp;utm_campaign=Badge_Grade)
 
-Things you may want to cover:
+Repositorio destinado a entrega da terceira VA da disciplina de Engenharia de Software.
 
-* Ruby version
+* [Site no Heroku 💻](https://hidden-peak-34038.herokuapp.com/)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
